@@ -1,0 +1,25 @@
+#configure logging
+logging: debug
+logpath: /tmp
+
+# stellar network configuration
+stellar:
+  network_type: test
+  network_password: ""
+  horizon_url: ""
+
+#*hack* user profile configuration
+user:
+  username: "groot"
+  # Don't worry following secret key is from testnet
+  secret_key: "SBIOD7WIHGPEJMDD5EDMMLWYIXKXH2DNSK7JAQKA7B2R4IDVRF6HXHR4"
+
+db:
+  # fillowing are filepath, by default engine will create those db in current working directory
+  connection_main: engine.db
+  connection_backtest: backtest.db
+
+importer:
+  start_from: "27285703026667521-0"
+  fetch_size: 100
+  fetch_wait: 10
