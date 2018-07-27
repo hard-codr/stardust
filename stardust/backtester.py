@@ -189,7 +189,6 @@ class SdexHistory(object):
 
         ohlcv_select_stmt += ' LIMIT %s' % (page_size,)
 
-        print('Query=', ohlcv_select_stmt, where_params)
         cur = self.conn.execute(ohlcv_select_stmt, where_params)
 
         result = SdexHistory.Ohlcv()
