@@ -1,18 +1,18 @@
 Stardust 
 --------
-A simple algorithmic trading engine
+A simple trading bot engine
 
 #### Why Stardust
 Stardust is a simple algorithmic trading framework. Its a framework and not a full-fledged website
 or an app that can be directly used. It has an algorithmic trading engine and provides a set of APIs
-to interact with this engine.
+to interact with this engine. This framework can be used to create the **trading bots** and other cool stuff.
 
 #### What it can do
 Stardust has the following components:
-1. Algorithmic trading engine
-2. Plugin-like mechanism to create the templates for the algorithm that a user can customize
+1. Algorithmic trading engine (trading bot engine)
+2. Plugin-like mechanism to create the templates for the algorithm that a user can customize (trading bot algorithms)
 3. REST API engine to interact with the engine
-4. Historical SDEX data importer and a backtesting engine 
+4. Historical SDEX data importer and a backtesting engine (to test bots performance with historical data)
 
 Following is a high-level architecture diagram of the Stardust:
 ![Architecture](assets/arch.jpg)
