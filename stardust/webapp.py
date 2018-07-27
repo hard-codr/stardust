@@ -89,6 +89,10 @@ async def get_deployed_algo(userid, deployment_id):
 async def create(request):
     # get request parameter
     reqparams = await request.json()
+
+    if type(reqparams) != dict:
+        return json_response(STATUS_ERR % ERRORS[ERR_INCORRECT_REQUEST], status=400)
+
     userid = request.user
     algoname = reqparams['algo_name'] if 'algo_name' in reqparams else ''
     tradepair = reqparams['trade_pair'] if 'trade_pair' in reqparams else ''
@@ -161,6 +165,10 @@ async def get_algo(request):
 async def backtest_run(request):
     userid = request.user
     reqparams = await request.json()
+
+    if type(reqparams) != dict:
+        return json_response(STATUS_ERR % ERRORS[ERR_INCORRECT_REQUEST], status=400)
+
     algoname = reqparams['algo_name'] if 'algo_name' in reqparams else ''
     start_ts = reqparams['start_ts'] if 'start_ts' in reqparams else ''
     end_ts = reqparams['end_ts'] if 'end_ts' in reqparams else ''
@@ -327,6 +335,10 @@ async def backtest_list(request):
 async def deploy(request):
     userid = request.user
     reqparams = await request.json()
+
+    if type(reqparams) != dict:
+        return json_response(STATUS_ERR % ERRORS[ERR_INCORRECT_REQUEST], status=400)
+
     algoname = reqparams['algo_name'] if 'algo_name' in reqparams else ''
     amount = reqparams['amount'] if 'amount' in reqparams else ''
     num_cycles = reqparams['num_cycles'] if 'num_cycles' in reqparams else ''
